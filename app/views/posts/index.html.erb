@@ -1,4 +1,7 @@
-<h1 class="placeholder" >
-  This is a index page
-
-</h1>
+<% @posts.each do |post| %>
+    <h1><%= link_to post.title, post %></h1>
+    published at
+    <%= time_ago_in_words(post.created_at) %>
+<% end %>
+<br>
+<%= link_to 'New Post', new_post_path %>

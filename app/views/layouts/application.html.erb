@@ -4,13 +4,25 @@
   <title>Forum</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link href="https://necolas.github.io/normalize.css/7.0.0/normalize.css" rel="stylesheet">
   <%= csrf_meta_tags %>
 </head>
 <body>
-<p class="notice"><%= notice %></p>
+ <header class="main_header clearfix">
+   <div id="logo">
+     <p>
+       Ashish's Rails Forum
+     </p>
+   </div>
+   <div id="button" >
+     <%= link_to 'New Post', new_post_path %>
+   </div>
+ </header>
+  <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
-
-<%= yield %>
-
+ <div class="wrapper">
+  <%= yield %>
+ </div>
 </body>
 </html>
